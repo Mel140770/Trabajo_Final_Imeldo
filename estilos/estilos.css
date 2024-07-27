@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+html, body {
+	margin:0 auto;
+	padding:10px;
+	width:980px;
+	font-size:13px;
+	color:#3c3c3c;
+	font-family: Helvetica, sans-serif;
+	/*background:url(../img/fondo.jpg) no-repeat fixed center top;*/
+	background-size:100% auto;
+	line-height:18px;
+}
+
+/* Modificación de comportamiento de los enlaces */
+a,a:visited{
+	text-decoration: none;
+}
+
+/* Modificación del comportamiento de encabezados */
+h2,h3{	
+	font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+/* Modificación del comportamiento de los párrafos */
+p {
+	text-align: justify;
+}
+
+/*Página principal*/
+/* Cabecera */
+header img{
+	width:100%;
+	height:100%;
+	border: 1px solid black;
+	margin: 4px;
+}
+
+/* Estilos comunes de los botones de navegación */
+.boton,.boton:hover,.botonin,.botonin:hover {
+	text-align:center;
+	text-decoration: none;
+	display:inline-block;
+	width: 60px;
+	padding: 5px 30px ;
+	white-space: nowrap;
+	margin: 5px 5px 10px;
+	border: 1px solid black;
+}
+
+/* Div del menú de la página */
+.div_menu {
+	text-align:justify;
+	margin-left:5px;
+	text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
+	color:white;
+}
+
+/* Estilos independientes de los botones de navegación */
+.boton{
+	background: #7abcff; /* Old browsers */
+	background: -moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */ 
+}
+
+.botonin {
+	background: rgb(197,222,234); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(197,222,234,1) 0%, rgba(138,187,215,1) 31%, rgba(6,109,171,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=0 ); /* IE6*/
+}
+
+/* Caja para continer*/
+.container{
+    height: 200px;
+	border: 1px solid black;
+	margin: 8px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 300px;
+}
+
+.imagen_demo_1{
+	float:right;
+	margin-left: 10px;
+	margin-right:20px;
+}
+
+.imagen_demo_2{
+	margin-left: 10px;
+	margin-right:20px;
+}
+/*Div del pie de página*/
+
+footer {
+	border: 1px solid black; 
+	font-size:12px;
+	position:relative;
+	box-sizing:border-box;
+	clear:both;
+	color: black;
+	text-align:center;
+	padding: 30px;
+	margin: 8px;
+}
