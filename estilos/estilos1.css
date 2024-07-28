@@ -2,10 +2,6 @@
 /* @charset "utf-8"; */
 /* Inicio del Documento CSS */
 
-/* Importación de Google Font "Open Sans" */
-/* @import url(http://fonts.googleapis.com/css?family=Open+Sans:300); */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-
 html, body {
 	margin:0 auto;
 	padding:0px;
@@ -13,12 +9,9 @@ html, body {
 	font-size:13px;
 	color:#3c3c3c;
 	font-family: Helvetica, sans-serif;
-	/*background:url(../img/fondo.jpg) no-repeat fixed center top;*/
 	background-size:100% auto;
 	line-height:18px;
 }
-
-
 
 /* Modificación de comportamiento de los enlaces */
 a,a:visited{
@@ -28,6 +21,11 @@ a,a:visited{
 /* Modificación del comportamiento del encabezado 1 */
 h1 {
 	font-size: 35px;
+}
+
+/* Modificación del comportamiento del encabezado 2 */
+h2 {
+	font-size: 25px;
 }
 
 /* Modificación del comportamiento de encabezados */
@@ -53,41 +51,15 @@ p {
 	display:inline;
 }
 
+/* Div de la cabecera */
+
 #div_seccion_principal{
 	height:auto;
 	border: 1px solid black;
 	margin: 8px;
 	padding-left: 30px;
 	padding-right: 30px;
-	padding-bottom: 30px;
-}
-
-#div_formulario{
-	height:850px;
-	border: 1px solid black;
-	margin: 8px;
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-bottom: 30px;
-}
-/*Fin del div que contiene la página*/
-
-/*Página principal*/
-
-#div_header{
-	clear:both;
-	box-sizing:border-box;
-	border:solid;
-	border-width:10px;
-	border-color:transparent;
-	background-color:#FFFFFF;
-	position:relative;
-}
-
-#div_header img{
-	width:100%;
-	height:100%;
-	border: 1px solid black;
+	padding-bottom: 0px;
 }
 
 /*Div del pie de página*/
@@ -102,17 +74,25 @@ p {
 	text-align:center;
 	padding: 30px;
 	margin: 8px;
-	
+	background-color: #fb7aff;
+}
+
+/* Parrafo Aviso Legal */
+#aviso_legal{
+	font-family: 'Open Sans', sans-serif;
+	color:black;
+	font-size: medium;
+	font-weight: bold;
 }
 
 /* Div del menú de la página */
 .div_menu {
 	text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-	text-align:left;
+	text-align:center;
 	margin-left:5px;
 	text-decoration: none;
 	font-family: 'Open Sans', sans-serif;
-	color:white;
+	color:black;
 }
 
 /* Estilos comunes de los botones de navegación */
@@ -131,29 +111,29 @@ p {
 
 /* Estilos independientes de los botones de navegación */
 .boton{
-	background: #7abcff; /* Old browsers */
-	background: -moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */ 
+	background: #fb7aff; /* Old browsers */
+	background: -moz-linear-gradient(top, #fb7aff 0%, #dc56f7 44%, #f53beb 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #fb7aff 0%,#dc56f7 44%,#f53beb 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #fb7aff 0%,#dc56f7 44%,#f53beb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb7aff', endColorstr='#f53beb',GradientType=0 ); /* IE6-9 */ 
 }
 
 
 .boton:hover{
-	background: #7abcff;
+	background: #fb7aff;
 	font-size: 14px;
 }
 
 .botonin {
-	background: rgb(197,222,234); /* Old browsers */
-	/*background: -moz-linear-gradient(top, rgba(197,222,234,1) 0%, rgba(138,187,215,1) 31%, rgba(6,109,171,1) 100%); /* FF3.6-15 */
-	/*background: -webkit-linear-gradient(top, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* Chrome10-25,Safari5.1-6 */
-	/*background: linear-gradient(to bottom, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=0 ); /* IE6*/
+	background: rgb(234,197,234); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(234,197,234,1) 0%, rgba(236,120,231,1) 31%, rgba(234,16,241,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(234,197,234,1) 0%,rgba(236,120,231,1) 31%,rgba(234,16,241,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(234,197,234,1) 0%,rgba(236,120,231,1) 31%,rgba(234,16,241,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=0 ); /* IE6*/
 }
 
 .botonin:hover{
-	background: #7abcff;
+	background: #fb7aff;
 	font-size: 14px;
 }
 
@@ -162,31 +142,17 @@ p {
 	float:right;
 	margin-left: 20px;
 }
-
-#imagen_cen {
-	float: inherit;
-}
-
 #imagen_izq {
 	float:left;
-	margin-left: 10px;
-	margin-right:20px;
+	margin-left: 150px;
+	margin-right:100px;
 }
 
 /* Estilos de imágenes alargadas artículos */
 #imagen_long {
 	width: 600px;
 	height: 200px;
-	margin-left:100px;
-}
-
-#galeria {
-	margin-left:20px;
-}
-
-#galeria img {
-	width: 150px;
-	height: 150px;
+	margin-left:150px;
 }
 
 /*******************************************************/
@@ -199,8 +165,8 @@ p {
 	text-decoration: none;
 	font-family: 'Open Sans', sans-serif;
 	display:inline-block;
-	color: #FFF;
-	background: #7abcff; 
+	color: #000000;
+	background: #fb7aff; 
 	padding: 6px 30px;
 	white-space: nowrap;
 	-webkit-border-radius: 2px;
@@ -215,7 +181,7 @@ p {
 }
 
 .morado{
-	background: #7abcff;
+	background: #fb7aff;
 	border: 1px solid #1488FF; 
 }
 
@@ -224,8 +190,8 @@ p {
 }
 
 .caja_gris{
-	margin: 0 0 5px;
-	overflow: hidden;
+	margin: 0 0 30px;
+	overflow: auto;
 	padding: 4px;
 	background-color: #F2F2F2;
 	border: 1px solid #6E6E6E;
@@ -233,13 +199,15 @@ p {
 }
 
 .formulario{
-	position:absolute;
-	margin-top: 270px;
-	margin-left: 140px;
+	position:relative;
+	margin-top: 100px;
+	margin-left: 340px;
 	padding-left: 80px;
 	margin-right: 140px;
 	padding-right: 120px;
+	margin-bottom: 170px;
 }
+
 
 /****************************************************/
 /*  Fin de definición de estilos para el formulario */ 
