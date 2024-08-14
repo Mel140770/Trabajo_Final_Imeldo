@@ -1,110 +1,268 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-
-html, body {
-	margin:0 auto;
-	padding:10px;
-	width:980px;
-	font-size:13px;
-	color:#3c3c3c;
-	font-family: Helvetica, sans-serif;
-	/*background:url(../img/fondo.jpg) no-repeat fixed center top;*/
-	background-size:100% auto;
-	line-height:18px;
+/*Fuente local*/
+@font-face {
+	font-family: "Fuente 2" ;
+	src: url("../assets/fonts/Dosis-VariableFont_wght.ttf");
 }
 
-/* Modificación de comportamiento de los enlaces */
-a,a:visited{
-	text-decoration: none;
+/* Texto con tipografia Fuente 2,indentacion, los espacios en blanco son ignorados*/
+*{
+	font-family: "Fuente 2";
+	text-indent: 3rem;
+	white-space: normal;
+	font-size: 1em;
+} 
+
+/* Comportamiento del section,article en ancho y alto */
+*{
+	box-sizing: border-box;
 }
 
-/* Modificación del comportamiento de encabezados */
-h2,h3{	
-	font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-}
-
-/* Modificación del comportamiento de los párrafos */
+/* Estilos para etiquetas p */
 p {
-	text-align: justify;
+	font-size: 18px;
 }
 
-/*Página principal*/
-/* Cabecera */
-header img{
-	width:100%;
-	height:100%;
-	border: 1px solid black;
-	margin: 4px;
+/* Estilos para etiquetas h2 */
+h2 {
+	float: right;
+	padding: 20px;
+	width: 79.5%;
+	border: 1px;
+	border-color: #000;
+	border-style: dashed;
+	background-color: #edc1e8;
+	font-size: 23px;
 }
 
-/* Estilos comunes de los botones de navegación */
-.boton,.boton:hover,.botonin,.botonin:hover {
-	text-align:center;
-	text-decoration: none;
-	display:inline-block;
-	width: 60px;
-	padding: 5px 30px ;
-	white-space: nowrap;
-	margin: 5px 5px 10px;
-	border: 1px solid black;
+/* Estilos para etiquetas h3 */
+h3 {
+	font-size: 20px;
 }
 
-/* Div del menú de la página */
-.div_menu {
-	text-align:justify;
-	margin-left:5px;
-	text-decoration: none;
-	font-family: 'Open Sans', sans-serif;
-	color:white;
-}
+/* CABECERA */
 
-/* Estilos independientes de los botones de navegación */
-.boton{
-	background: #7abcff; /* Old browsers */
-	background: -moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */ 
-}
-
-.botonin {
-	background: rgb(197,222,234); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(197,222,234,1) 0%, rgba(138,187,215,1) 31%, rgba(6,109,171,1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=0 ); /* IE6*/
-}
-
-/* Caja para continer*/
-.container{
-    height: 200px;
-	border: 1px solid black;
-	margin: 8px;
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-bottom: 300px;
-}
-
-.imagen_demo_1{
-	float:right;
-	margin-left: 10px;
-	margin-right:20px;
-}
-
-.imagen_demo_2{
-	margin-left: 10px;
-	margin-right:20px;
-}
-/*Div del pie de página*/
-
-footer {
-	border: 1px solid black; 
-	font-size:12px;
-	position:relative;
-	box-sizing:border-box;
-	clear:both;
-	color: black;
-	text-align:center;
+/* Estilos de la cabecera */
+header {
+	background-image: linear-gradient(to left,rgb(243, 13, 109),rgb(0, 238, 255));
 	padding: 30px;
-	margin: 8px;
+	text-align: center;
+	font-size: 35px;
+	color: white;
 }
+
+/* Cabecera imagen de fondo */
+.contenedor{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Cabecera texto al frente */
+.centrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	font-size: 100%;
+	font-weight: 600;
+}
+
+/* MENU DE NAVEGACION HORIZONTAL */
+
+.boton_horizontal {
+	list-style-type: none;
+	background-color: #d26bc6;
+	padding-left: 400px;
+}
+
+/* Alnineación de elementos de la lista */
+ul.boton_horizontal li{
+	display: inline;
+	padding-left: 20px;
+}
+/* Estilo para links del menú de navegación */
+li a {
+	font-size: 25px; 
+	font-weight: 400;
+	text-decoration: none;
+	padding: 10px;
+	color: white;
+	background-color: #69293a;
+	border-radius: 6px;
+	line-height: 60px;
+	outline: none;
+}
+
+/* Hacer que el cursor cambien al pasar por las opciones de manú */
+li a:hover{
+	cursor: pointer;
+	background-color: #eee0ec;
+	color: crimson;
+	font-weight: 600;
+}
+
+/* Hacer que la opción del menú quede seleccionada */
+li a[href="#"] {
+	background-color: aqua;
+	color: #69293a;
+} 
+
+/* FIN DE MENU DE NAVEGACION HORIZONTAL */
+
+
+/* MENU DE NAVEGACION VERTICAL */
+
+/* Columna flotante del menú de navegación */
+nav {
+	float: left;
+	width: 20%;
+	height: 1227px;
+	background: #d26bc6;
+}
+
+/* Estilo de la lista del menú*/
+nav ul {
+	list-style-type: none;
+}
+
+/* Estilo botones laterales */
+.boton_vertical {
+	margin-top: 10px;
+	margin-right: 10px;
+	font-size: 25px; 
+	font-weight: 600;
+	text-decoration: none;
+	color: rgb(85, 23, 5);
+	border: 1px solid rgb(36, 60, 197);
+	border-radius: 8px;
+	background-color: #a3dabe;
+}
+
+.boton_vertical:hover{
+	color:darkblue;
+	cursor:pointer;
+	font-weight: 900;
+	background-color: coral;
+}
+
+/*Estilo cabecera menu de navegación*/
+.cabecera_menu_vertical {
+	font-size: 32px; 
+	font-weight: 600;
+	padding-top: 14px;
+}
+
+/* FIN MENU DE NAVEGACION VERTICAL */
+
+
+/* Estilos del article, con float */
+article {
+	float: right;
+	padding: 20px;
+	width: 80%;
+	background-color: #f1f1f1;
+	height: 300px;
+}
+
+/* PIE DE PAGINA*/
+
+/* Estilos para el footer */
+footer {
+	float: right;
+	width: 100%;
+	background-image: linear-gradient(to left,rgb(243, 13, 109),rgb(0, 238, 255));
+	padding: 10px;
+	text-align: center;
+	color: white;
+}
+
+/* FIN ESTILOS PIE DE PAGINA */
+
+
+/* ESTILOS PAGINAS WEB DEL MENU DE NAVEGACION*/
+
+/* Estilos fotos del portafolio */
+.foto_portafolio {
+	float: left;
+	padding-left: 7%;
+}
+
+/* Estilo para contacto */
+.contacto{
+	text-align: center;
+}
+
+/* Estilo del article contacto y presupuesto, con float */
+.caja_contacto_presupuesto {
+	float: right;
+	padding: 20px;
+	width: 80%;
+	background-color: #f1f1f1;
+	height: 1118px;
+}
+
+/* Estilo mapa de contacto */
+.mapa{
+	padding-left: 27%;
+	padding-top: 3%;
+}
+
+/* FIN ESTILOS PAGINAS WEB DEL MENU DE NAVEGACION*/
+
+
+/* Estilo para el formulario */
+
+form {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    height: 100vh;
+}
+
+legend{
+	text-align: left;
+	text-indent: 1%;
+	font-size: larger;
+	font-weight: 600;
+	background-color: #2fc5cf;
+}
+
+input,
+    textarea {
+    width: 100%;
+    padding: 5px;
+    outline-color:#000;
+	text-indent: 0%;
+}
+
+label {
+    line-height: 3rem;
+	font-size:20px;
+	font-weight:600;
+}
+
+input[type="checkbox"] {
+	transform: translate(-31%,285%);
+}
+
+.aviso{
+	font-size:16px;
+	font-weight:400;
+	padding-bottom: 9%;
+	padding-left: 25%;
+}
+
+input[type="submit"] {
+   transform: translate(0.2%);
+   padding: 2px;
+   margin-top: 0.6rem;
+   font-weight: bold;
+   background-color: rgb(245, 135, 135);
+   cursor: pointer;
+}
+
+fieldset {
+   padding: 30px 40px;
+   background-color: #eee0ec;
+ }
+
