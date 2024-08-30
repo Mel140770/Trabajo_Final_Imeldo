@@ -1,0 +1,37 @@
+{
+    "eleccion_foto":[
+       {
+            "nombre":"Foto1.jpg",
+            "parametros":{
+                "ancho":"80px",
+                "alto":"80px",
+                "estilo":"color"
+            }
+       },
+       {
+            "nombre":"Foto2.jpg",
+            "parametros":{
+                "ancho":"80px",
+                "alto":"80px",
+                "estilo":"blaco y negro"
+            }
+       },
+       {
+        "nombre":"Foto3.jpg",
+        "parametros":{
+            "ancho":"80px",
+            "alto":"80px",
+            "estilo":"blaco y negro"
+        }
+        },
+        {
+            "nombre":"Foto4.jpg",
+            "parametros":{
+                "ancho":"80px",
+                "alto":"80px",
+                "estilo":"color"
+            }
+        }
+
+    ]
+ }

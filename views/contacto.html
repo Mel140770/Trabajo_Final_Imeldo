@@ -12,18 +12,19 @@
             <meta name="category" content="Trabajo Final">
             <!-- Declaración de fichero de estilos -->
             <link rel="stylesheet" href="../estilos/estilos.css">
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCedIjuHPgALCV4XNCntpIanwSMq8gNmbA"></script>
             <link rel="canonical" href="../index.html">
-            <title>Web Trabajo Final Imeldo (Contacto)</title>
+            <title>Web Trabajo Final Imeldo JS(Contacto)</title>
         </head>
     <body>
         <header>
             <h1>Melba Estudio Creativo y Fotografico</h1>
             <div class="contenedor">
-                <img src="../assets/imagenes/Logos_Melba/Melba_alargado_opacidad.png" alt="imagen de fondo" height="254" width="880">
+                <img src="../assets/imagenes/Logos_Melba/Melba_alargado_opacidad.png" alt="foto de fondo" height="145" width="550">
                 <div class="centrado">Profesionales Creativos y fotografía</div>
             </div>  
         </header>
-        <div>
+        <div class="menu_horizontal">
             <ul class="boton_horizontal">
                 <li><a href="../index.html" title="Inicio">Inicio</a></li>
                 <li><a href="./portafolio.html" title="Portafolio">Portafolio</a></li>
@@ -31,29 +32,49 @@
                 <li><a href="#" title="Contacto">Contacto</a></li>
             </ul>
         </div>
+        <nav>
+            <div class="cabecera_menu_vertical"> Menú </div>
+            <ul>
+                <li class="boton_vertical">Link 1</li>
+                <li class="boton_vertical">Link 2</li>
+                <li class="boton_vertical">Link 3</li>
+                <li class="boton_vertical">Link 4</li>
+            </ul>
+            <div class="imagen_nav">
+                <img src="../assets/imagenes/Logos_Melba/Melba_cuadrado.png" alt="foto en nav" height="129" width="155">
+            </div>
+        </nav>
         <section>
             <h2>Contacto</h2>
-            <nav>
-                <div class="cabecera_menu_vertical"> Menú </div>
-                <ul>
-                    <li class="boton_vertical">Link 1</li>
-                    <li class="boton_vertical">Link 2</li>
-                    <li class="boton_vertical">Link 3</li>
-                    <li class="boton_vertical">Link 4</li>
-                </ul>
-                <div class="imagen_nav">
-                    <img src="../assets/imagenes/Logos_Melba/Melba_cuadrado.png" alt="imagen en nav" height="129" width="155">
-                </div>
-            </nav>
             <article class="caja_contacto_presupuesto">
                 <h3>Datos de contacto</h3>
                 <p class="contacto">
-                    <strong>Dirección:</strong> Avenida 3 de Mayo 55,
+                    <strong>Dirección:</strong> Avenida 3 de Mayo 69,
                     38007 Santa Cruz de Tenerife <br>
                     <strong>Teléfono de contacto:</strong> 822-017-006 <br>
                     <strong>Email:</strong>contacto@melba.es
                 </p>
-                <div class="mapa"><img src="../assets/imagenes/Mapa/Mapa.png" alt="mapa" width="600" height="600"></div>
+                <div class="mapa">
+                    <div class="container">
+                        <div class="input-container">
+                            <label for="origin">Punto de Origen (Dirección):</label>
+                                <input type="text" id="origin" placeholder="Ingrese una dirección. Ej: calle/avenida 3 de mayo 35,santa cruz de tenerife" required>
+                            <p class="parrafo_destino">Punto de Destino:</p>
+                                 <p id="destination">Avda 3 de Mayo 69,santa cruz de tenerife</p>
+                            <label for="transport">Modo de Transporte:</label>
+                                <select id="transport">
+                                    <option value="DRIVING">Auto</option>
+                                    <option value="WALKING">Caminando</option>
+                                    <option value="BICYCLING">Bicicleta</option>
+                                    <option value="TRANSIT">Transporte Público</option>
+                                </select>
+                                <br>
+                                <button id="calculate">Calcular Ruta</button>
+                        </div>
+                        <div id="map"></div>
+                        <div id="route"></div>
+                    </div>
+                </div>
             </article>
         </section>
         <footer>
@@ -65,6 +86,80 @@
             <p><strong> Aviso Legal</strong></p>
             <p> <strong>Direccion :</strong> Avda 3 de Mayo 55, 38005 Santa Cruz de Tenerife</p>
         </footer>
-        
+        <script>
+            let map, service, originMarker, destinationMarker;
+            function initMap() 
+                {
+                    map = new google.maps.Map(document.getElementById('map'), 
+                    {
+                        center: {lat: 28.458661, lng: -16.258048},
+                        zoom: 15
+                    });
+                    var marca = new google.maps.Marker(
+                    { 
+                        position: {lat: 28.458661, lng: -16.258048},  // Colocar un señalizador en el mapa donde las coordenadas de destino
+                        map: map,
+                        title: "Melba Estudio"     
+                    });
+                    var caja = new google.maps.InfoWindow
+                    (
+                        {  // Aparece una caja con el marcador anterior con los datos de la empresa
+                            content: 'Empresa: <b>Melba Estudio</b><br>Teléfono: 123 456 789<br>dirección: Avda. 3 de Mayo 69 (Local calle)'
+                        }
+                    );  
+                    google.maps.event.addListener(marca,'click',function()
+                        {      
+                            caja.open(map,marca);  
+                        }
+                    );  
+                }
+            document.getElementById('calculate').onclick = function() 
+                {
+                    const origin = document.getElementById('origin').value;
+                    const travelMode = document.getElementById('transport').value;
+                    const geocoder = new google.maps.Geocoder();
+                    geocoder.geocode({ 'address': origin }, function(results, status) 
+                    {
+                        if (status === 'OK') 
+                        {
+                            const originLatLng = results[0].geometry.location;
+                            if (originMarker) originMarker.setMap(null);
+                            originMarker = new google.maps.Marker(
+                                {   position: originLatLng,
+                                    map: map,
+                                    title: 'Origen'
+                                });
+                            if (destinationMarker) destinationMarker.setMap(null);
+                            destinationMarker = new google.maps.Marker(
+                                {   position: {lat: 28.458661, lng: -16.258048} , //destinationLatLng,
+                                    map: map,
+                                    title: 'Melba Estudio'
+                                });
+                            map.setCenter(originLatLng);
+                            const directionsService = new google.maps.DirectionsService();
+                            const directionsRenderer = new google.maps.DirectionsRenderer();
+                            directionsRenderer.setMap(map);
+                            const request = {
+                                origin: originLatLng,
+                                destination:  {lat: 28.458661, lng: -16.258048},  //destinationLatLng,
+                                travelMode: google.maps.TravelMode[travelMode]
+                            };
+                            directionsService.route(request, (result, status) => 
+                            {
+                                if (status === 'OK') 
+                                {
+                                    directionsRenderer.setDirections(result);
+                                    document.getElementById('route').innerText = "Ruta calculada exitosamente.";
+                                } else {
+                                    document.getElementById('route').innerText = "Error al calcular la ruta: " + status;
+                                    }
+                            });
+                        } else {
+                            document.getElementById('route').innerText = "Geocodificación fallida: " + status;
+                            }
+                    });
+                };
+            window.onload = initMap;
+        </script>
     </body>
 </html>

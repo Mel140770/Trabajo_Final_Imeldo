@@ -12,18 +12,19 @@
             <meta name="category" content="Trabajo Final">
             <!-- Declaración de fichero de estilos -->
             <link rel="stylesheet" href="../estilos/estilos.css">
+            <script src="../js/portafolio.js"></script>
             <link rel="canonical" href="../index.html">
-            <title>Web Trabajo Final Imeldo (Portafolio)</title>
+            <title>Web Trabajo Final Imeldo JS(Portafolio)</title>
         </head>
     <body>
         <header>
             <h1>Melba Estudio Creativo y Fotografico</h1>
             <div class="contenedor">
-                <img src="../assets/imagenes/Logos_Melba/Melba_alargado_opacidad.png" alt="imagen de fondo" height="254" width="880">
+                <img src="../assets/imagenes/Logos_Melba/Melba_alargado_opacidad.png" alt="foto de fondo" height="145" width="550">
                 <div class="centrado">Profesionales Creativos y fotografía</div>
             </div>           
         </header>
-        <div>
+        <div class="menu_horizontal">
             <ul class="boton_horizontal">
                 <li><a href="../index.html" title="Inicio">Inicio</a></li>
                 <li><a href="#" title="Portafolio">Portafolio</a></li>
@@ -31,46 +32,53 @@
                 <li><a href="./contacto.html" title="Contacto">Contacto</a></li>
             </ul>
         </div>
+        <nav>
+            <div class="cabecera_menu_vertical"> Menú </div>
+            <ul>
+                <li class="boton_vertical">Link 1</li>
+                <li class="boton_vertical">Link 2</li>
+                <li class="boton_vertical">Link 3</li>
+                <li class="boton_vertical">Link 4</li>
+            </ul>
+            <div class="imagen_nav">
+                <img src="../assets/imagenes/Logos_Melba/Melba_cuadrado.png" alt="foto en nav" height="129" width="155">
+            </div>
+        </nav>
         <section>
             <h2>Estudio de fotografia de ambientes</h2>
-            <nav>
-                <div class="cabecera_menu_vertical"> Menú </div>
-                <ul>
-                    <li class="boton_vertical">Link 1</li>
-                    <li class="boton_vertical">Link 2</li>
-                    <li class="boton_vertical">Link 3</li>
-                    <li class="boton_vertical">Link 4</li>
-                </ul>
-                <div>
-                    <img src="../assets/imagenes/Logos_Melba/Melba_cuadrado.png" alt="imagen en nav" height="129" width="155">
-                </div>
-            </nav>
             <article>
                 <h3>Colección fotos ambiente</h3>
-                <div class="foto_portafolio"><img src="../assets/imagenes/Fotos_Portfolio/Fotos_ambientes/foto11.jpg" title="Barranco" alt="foto11" width="130" height="187"></div>
-                <div class="foto_portafolio"><img src="../assets/imagenes/Fotos_Portfolio/Fotos_ambientes/foto4.jpg" title="Marinero" alt="foto4" width="130" height="187"></div>
-                <div class="foto_portafolio"><img src="../assets/imagenes/Fotos_Portfolio/Fotos_ambientes/foto8.jpg" title="Desierto" alt="foto8" width="130" height="187"></div>
-                <div class="foto_portafolio"><img src="../assets/imagenes/Fotos_Portfolio/Fotos_ambientes/foto5.jpg" title="Costero" alt="foto5" width="130" height="187"></div>
+                <div id="caja_fotos_amb">
+                <img class="flecha" onclick="moverizq()" src="../assets/imagenes/Flechas/flechaizq.png" alt="flecha_izq" width="80" height="80"> <!-- Flecha izquierda-->
+                <img class="foto_car" id="img1" src="../assets/imagenes/Fotos_Portfolio/Fotos_ambientes/foto11.jpg" title="Barranco" alt="foto11" width="130" height="187">
+                <img class="foto_car" id="img2" src="../assets/imagenes/Fotos_Portfolio/Fotos_ambientes/foto4.jpg" title="Marinero" alt="foto4" width="130" height="187">
+                <img class="foto_car" id="img3" src="../assets/imagenes/Fotos_Portfolio/Fotos_ambientes/foto8.jpg" title="Desierto" alt="foto8" width="160" height="250">
+                <img class="foto_car" id="img4" src="../assets/imagenes/Fotos_Portfolio/Fotos_ambientes/foto5.jpg" title="Costero" alt="foto5" width="130" height="187">
+                <img class="foto_car" id="img5" src="../assets/imagenes/Fotos_Portfolio/Fotos_ambientes/foto14.jpg" title="Escritorio" alt="foto14" width="130" height="187">
+                <img class="flecha" onclick="moverder()" src="../assets/imagenes/Flechas/flechader.png" alt="flecha_izq" width="80" height="80"> <!-- Flecha derecha-->
+                </div>
             </article>
         </section>
         <section>
-            <h2>Estudio de fotografía en blanco y negro</h2>
+            <h2 class="seccion2">Estudio de fotografía en blanco y negro</h2>
             <article>
                 <h3>Colección fotos en blanco y negro</h3>
                 <div class="foto_portafolio"><img src="../assets/imagenes/Fotos_Portfolio/Fotos_bn/foto1.jpg" title="Nueva York" alt="foto1" width="130" height="188"></div>
                 <div class="foto_portafolio"><img src="../assets/imagenes/Fotos_Portfolio/Fotos_bn/foto2.jpg" title="Bodegón" alt="foto2" width="130" height="188"></div>
                 <div class="foto_portafolio"><img src="../assets/imagenes/Fotos_Portfolio/Fotos_bn/foto6.jpg" title="Gaviota" alt="foto6" width="130" height="188"></div>
                 <div class="foto_portafolio"><img src="../assets/imagenes/Fotos_Portfolio/Fotos_bn/foto7.jpg" title="Calle" alt="foto7" width="130" height="188"></div>
+                <div class="foto_portafolio"><img src="../assets/imagenes/Fotos_Portfolio/Fotos_bn/foto15.jpg" title="Neon" alt="foto15" width="130" height="188"></div>
             </article>
         </section>
         <section>
-            <h2>Estudio de fotografía de viajes</h2>
+            <h2 class="seccion3">Estudio de fotografía de viajes</h2>
             <article>
                 <h3>Colección fotos de viajes</h3>
                 <div class="foto_portafolio"><img src="../assets/imagenes/Fotos_Portfolio/Fotos_viajes/foto3.jpg" title="Europa" alt="foto3" width="130" height="170"></div>
                 <div class="foto_portafolio"><img src="../assets/imagenes/Fotos_Portfolio/Fotos_viajes/foto9.jpg" title="Africa" alt="foto9" width="130" height="170"></div>
                 <div class="foto_portafolio"><img src="../assets/imagenes/Fotos_Portfolio/Fotos_viajes/foto10.jpg" title="Asia" alt="foto10" width="130" height="170"></div>
                 <div class="foto_portafolio"><img src="../assets/imagenes/Fotos_Portfolio/Fotos_viajes/foto12.jpg" title="India" alt="foto12" width="130" height="170"></div>
+                <div class="foto_portafolio"><img src="../assets/imagenes/Fotos_Portfolio/Fotos_viajes/foto13.jpg" title="Infinity" alt="foto13" width="130" height="170"></div>
             </article>
         </section>
         <footer>

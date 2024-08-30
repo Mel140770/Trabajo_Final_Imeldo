@@ -10,20 +10,23 @@
             <meta name="lang" content="es">
             <meta name="revisit-after" content="2 days">
             <meta name="category" content="Trabajo Final">
+            <link rel="canonical" href="index.html">
             <!-- Declaración de fichero de estilos -->
             <link rel="stylesheet" href="./estilos/estilos.css">
-            <link rel="canonical" href="index.html">
-            <title>Web Trabajo Final Imeldo (Index)</title>
+            <!-- Declaración de uso de JQuery -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="./js/index.js"></script>
+            <title>Web Trabajo Final Imeldo JS(Index)</title>
         </head>
     <body>
         <header>
             <h1>Melba Estudio Creativo y Fotografico</h1>
             <div class="contenedor">
-                <img src="./assets/imagenes/Logos_Melba/Melba_alargado_opacidad.png" alt="imagen de fondo" height="254" width="880">
+                <img src="./assets/imagenes/Logos_Melba/Melba_alargado_opacidad.png" alt="foto de fondo" height="145" width="550">
                 <div class="centrado">Profesionales Creativos y fotografía</div>
             </div>  
         </header>
-        <div>
+        <div class="menu_horizontal">
             <ul class="boton_horizontal">
                 <li><a href="#" title="Inicio">Inicio</a></li>
                 <li><a href="./views/portafolio.html" title="Portafolio">Portafolio</a></li>
@@ -31,20 +34,20 @@
                 <li><a href="./views/contacto.html" title="Contacto">Contacto</a></li>
             </ul>
         </div>
+        <nav>
+            <div class="cabecera_menu_vertical"> Menú </div>
+            <ul>
+                <li class="boton_vertical">Link 1</li>
+                <li class="boton_vertical">Link 2</li>
+                <li class="boton_vertical">Link 3</li>
+                <li class="boton_vertical">Link 4</li>
+            </ul>
+            <div class="imagen_nav">
+                <img src="./assets/imagenes/Logos_Melba/Melba_cuadrado.png" alt="foto en nav" height="129" width="155">
+            </div>
+        </nav>
         <section>
             <h2>Estudio de fotografia</h2>
-            <nav>
-                <div class="cabecera_menu_vertical"> Menú </div>
-                <ul>
-                    <li class="boton_vertical">Link 1</li>
-                    <li class="boton_vertical">Link 2</li>
-                    <li class="boton_vertical">Link 3</li>
-                    <li class="boton_vertical">Link 4</li>
-                </ul>
-                <div class="imagen_nav">
-                    <img src="./assets/imagenes/Logos_Melba/Melba_cuadrado.png" alt="imagen en nav" height="129" width="155">
-                </div>
-            </nav>
             <article>
                 <h3>Realización de fotografías</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -54,7 +57,7 @@
             </article>
         </section>
         <section>
-            <h2>Estudio de creatividad</h2>
+            <h2 class="seccion2">Estudio de creatividad</h2>
             <article>
                 <h3>Creación de proyectos creativos</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -64,13 +67,12 @@
             </article>
         </section>
         <section>
-            <h2>Estudios realizados</h2>
+            <h2 class="seccion3">Estudios realizados</h2>
             <article>
                 <h3>Casos de éxito</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aliquam interdum ipsum sit amet nibh commodo, ut venenatis quam
-                    condimentum. Suspendisse bibendum lacus imperdiet, viverra erat eu,
-                    iaculis diam..</p>
+                <p>Elige la foto que te guste y ponte en <a href="./views/contacto.html" title="Contacto" id="enlace_contacto">Contacto</a> con nosotros y te la enviamos</p>
+                <button id="caja_lista_index" onclick="cargar()">Cargar_Lista </button>
+                <div id="caja"></div>
             </article>
         </section>
         <footer>

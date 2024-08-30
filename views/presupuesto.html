@@ -10,20 +10,21 @@
             <meta name="lang" content="es">
             <meta name="revisit-after" content="2 days">
             <meta name="category" content="Trabajo Final">
+            <title>Web Trabajo Final Imeldo JS(Presupuesto)</title>
             <!-- Declaración de fichero de estilos -->
             <link rel="stylesheet" href="../estilos/estilos.css">
             <link rel="canonical" href="../index.html">
-            <title>Web Trabajo Final Imeldo (Presupuesto)</title>
+            <script src="../js/presupuesto.js"></script> 
         </head>
     <body>
         <header>
             <h1>Melba Estudio Creativo y Fotografico</h1>
             <div class="contenedor">
-                <img src="../assets/imagenes/Logos_Melba/Melba_alargado_opacidad.png" alt="imagen de fondo" height="254" width="880">
+                <img src="../assets/imagenes/Logos_Melba/Melba_alargado_opacidad.png" alt="foto de fondo" height="145" width="550">
                 <div class="centrado">Profesionales Creativos y fotografía</div>
             </div>           
         </header>
-        <div>
+        <div class="menu_horizontal">
             <ul class="boton_horizontal">
                 <li><a href="../index.html" title="Inicio">Inicio</a></li>
                 <li><a href="./portafolio.html" title="Portafolio">Portafolio</a></li>
@@ -31,44 +32,89 @@
                 <li><a href="./contacto.html" title="Contacto">Contacto</a></li>
             </ul>
         </div>
-        <section>
+        <nav>
+            <div class="cabecera_menu_vertical"> Menú </div>
+            <ul>
+                <li class="boton_vertical">Link 1</li>
+                <li class="boton_vertical">Link 2</li>
+                <li class="boton_vertical">Link 3</li>
+                <li class="boton_vertical">Link 4</li>
+            </ul>
+            <div class="imagen_nav">
+                <img src="../assets/imagenes/Logos_Melba/Melba_cuadrado.png" alt="foto en nav" height="129" width="155">
+            </div>
+        </nav>
+        <section class="secciones">
             <h2>Solicitud de presupuesto</h2>
-            <nav>
-                <div class="cabecera_menu_vertical"> Menú </div>
-                <ul>
-                    <li class="boton_vertical">Link 1</li>
-                    <li class="boton_vertical">Link 2</li>
-                    <li class="boton_vertical">Link 3</li>
-                    <li class="boton_vertical">Link 4</li>
-                </ul>
-                <div class="imagen_nav">
-                    <img src="../assets/imagenes/Logos_Melba/Melba_cuadrado.png" alt="imagen en nav" height="129" width="155">
-                </div>
-            </nav>
             <article class="caja_contacto_presupuesto">
                 <h3>Solicitud de datos</h3>
-                <form>
-                    <fieldset>
-                        <legend>Contacto</legend>
+                <form id="formulario" name="formulario" method="post">
+                    <fieldset id="caja_formulario_1">
+                        <legend>Datos</legend>
                         <div class="form-control">
                           <label for="nombre">Nombre</label>
-                          <input type="text" id="nombre" placeholder="Introduce tu nombre" required>
+                          <input type="text" name="nombre1" id="nombre" placeholder="Introduce tu nombre">
                         </div>
                         <div class="form-control">
-                            <label for="telefono">Teléfono</label>
-                            <input type="text" id="telefono" placeholder="Introduce tu teléfono" required>
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" name="apellidos1" id="apellidos" placeholder="Introduce tus apellidos" required>
                           </div>
                         <div class="form-control">
-                          <label for="email">Email</label>
-                          <input type="email" id="email" placeholder="Introduce tu Email" required>
+                          <label for="tel_cont">Telefono de contacto</label>
+                          <input type="text" name="tel_cont1" id="tel_cont" placeholder="Introduce tu teléfono de contacto" required>
                         </div>
                         <div class="form-control">
-                          <label for="message">Mensaje</label>
-                          <textarea id="message" cols="30" rows="10" placeholder="Introduce tu mensaje" required></textarea>
+                          <label for="email">Email</label>
+                          <input type="text" name="email1" id="email" placeholder="Introduce tu correo electrónico" required>
                         </div>
-                        <input type="checkbox" id="check"><label for="check"><span class="aviso">He leído la Política de Privacidad</span></label>
-                        <input type="submit" value="Enviar">
-                      </fieldset>
+                    </fieldset>
+                    <fieldset id="caja_formulario_2">
+                        <legend>Presupuesto</legend>
+                        <div class="form-control">
+                            <label for="seleccion_pr">Producto: </label>
+                            <select id="seleccion_pr" onchange="calcularPresupuesto()">
+                                <option value="0">-</option>
+                                <option value="1">Opción 1 (100€)</option>
+                                <option value="2">Opción 2 (200€)</option>
+                                <option value="3">Opción 3 (300€)</option>
+                            </select><br>
+                            <label for="seleccion_pl">Plazo: </label>
+                            <select id="seleccion_pl" onchange="calcularPresupuesto()">
+                                <option value="0">-</option>
+                                <option value="1">1 dia (20% de descuento)</option>
+                                <option value="2">1 semana (15% de descuento)</option>
+                                <option value="3">1 mes (10% de descuento)</option>
+                            </select>
+                            <p class="extras"> Elegir extras para el producto: </p>
+                            <input type="checkbox" id="extra1" onclick="calcularPresupuesto()">
+                            <label for="extra1">
+                                <span class="extra1_titulo">Extra 1 (10€)</span>
+                            </label>
+                            <input type="checkbox" id="extra2" onclick="calcularPresupuesto()">
+                            <label for="extra2">
+                                <span class="extra2_titulo">Extra 2 (20€)</span>
+                            </label>
+                            <input type="checkbox" id="extra3" onclick="calcularPresupuesto()">
+                            <label for="extra3">
+                                <span class="extra3_titulo">Extra 3 (30€)</span>
+                            </label>
+                            <input type="checkbox" id="extra4" onclick="calcularPresupuesto()">
+                            <label for="extra4">
+                                <span class="extra4_titulo">Extra 4 (40€)</span>
+                            </label><br><br>
+                            <label for="presupuesto_estimado">Presupuesto</label>
+                            <input type="text" id="presupuesto_estimado" readonly>
+                            <button type="button" id="borrar" onclick="borrarResultado()">Borrar</button> 
+                        </div>  
+                    </fieldset>
+                    <fieldset id="caja_formulario_3">
+                        <legend>Aceptar condiciones y envío de presupuesto</legend>
+                        <input type="checkbox" id="aceptar">
+                        <label for="aceptar">
+                            <span class="aviso">He leído la Política de Privacidad</span>
+                        </label><br>
+                        <input type="button" name="enviar1" id="enviar" value="Enviar" onclick="confirmar(this.form)">
+                    </fieldset>
                 </form> 
             </article>  
         </section>
